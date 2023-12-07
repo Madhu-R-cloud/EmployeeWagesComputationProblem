@@ -50,19 +50,6 @@ while(true){
     
 }
 
-
-
-// function employeePresentOrNot(){
-//     const randomValue = Math.round(Math.random())
-//     console.log(randomValue)
-//     if(randomValue>=1){
-//         console.log("Employee is Present");
-//     }
-//     else{
-//         console.log("Employee is Absent")
-//     }
-// }
-
 function workHrDailyWage(){
     const workHour = 8;
     const dailyWagePerHr = 20;
