@@ -46,9 +46,6 @@ function workHrDailyWage() {
 
     Employees.forEach((employee) => {
 
-    for(let i = 0;i<workingDays;i++){
-        
-    }
         const randomValue = Math.round(Math.random());
 
         if (randomValue == 1) {
