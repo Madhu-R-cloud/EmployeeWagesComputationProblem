@@ -3,9 +3,9 @@
 const readline = require('readline-sync');
 
     const Employees = [
-        { Eid: 1, Name: "Madhu", Attendance: '', DailyWage: 0, EmployeeType : ''},
-        { Eid: 2, Name: "Manu", Attendance: '', DailyWage: 0,EmployeeType : ''},
-        { Eid: 3, Name: "Smith", Attendance: '', DailyWage: 0, EmployeeType : ''},
+        { Eid: 1, Name: "Madhu", Attendance: '', DailyWage: 0,  MonthlyWage: 0,EmployeeType : 'Fulltime'},
+        { Eid: 2, Name: "Manu", Attendance: '', DailyWage: 0, MonthlyWage: 0,EmployeeType : 'Parttime'},
+        { Eid: 3, Name: "Smith", Attendance: '', DailyWage: 0, MonthlyWage: 0, EmployeeType : 'Fulltime'},
     ];
 
 
@@ -39,26 +39,36 @@ while(true){
 
 function workHrDailyWage() {
     const hourlyWage = 20;
-
-    console.log("|-----|-----------|--------------|------------|");
-    console.log("| Eid | Name      | Attendance   | Daily Wage |");
-    console.log("|-----|-----------|--------------|------------|");
+    const workingDays = 20;
+    console.log("|-----|-----------|--------------|------------|-------------------|");
+    console.log("| Eid | Name      | Attendance   | Daily Wage | Employee Type     |");
+    console.log("|-----|-----------|--------------|------------|-------------------|");
 
     Employees.forEach((employee) => {
+
+    for(let i = 0;i<workingDays;i++){
+        
+    }
         const randomValue = Math.round(Math.random());
 
         if (randomValue == 1) {
             employee.Attendance = 'Present';
-            employee.DailyWage = 8 * hourlyWage;
+            if(employee.EmployeeType == 'Fulltime'){
+                employee.DailyWage = 8 * hourlyWage;
+            }
+            else{
+                employee.DailyWage = 4 * hourlyWage;
+            }
+           
         } else {
             employee.Attendance = 'Absent';
             employee.DailyWage = 0;
         }
 
-        console.log(`| ${employee.Eid}   | ${employee.Name.padEnd(9)} | ${employee.Attendance.padEnd(12)} | $${employee.DailyWage.toString().padEnd(9)} |`);
+        console.log(`| ${employee.Eid}   | ${employee.Name.padEnd(9)} | ${employee.Attendance.padEnd(12)} | $${employee.DailyWage.toString().padEnd(9)} | ${employee.EmployeeType.padEnd(18)}|`);
     });
 
-    console.log("|-----|-----------|--------------|------------|");
+    console.log("|-----|-----------|--------------|------------|-------------------|");
 }
 
 
